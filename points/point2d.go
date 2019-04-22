@@ -20,8 +20,9 @@ import "fmt"
 
 // Point2D ...
 type Point2D struct {
-	X float64
-	Y float64
+	X    float64
+	Y    float64
+	Data interface{}
 }
 
 // Dimensions ...
@@ -39,5 +40,5 @@ func (p *Point2D) Dimension(i int) float64 {
 
 // String ...
 func (p *Point2D) String() string {
-	return fmt.Sprintf("{%.2f %.2f}", p.X, p.Y)
+	return fmt.Sprintf("{%.2f %.2f %v}", p.X, p.Y, p.Data)
 }

@@ -19,7 +19,7 @@ package points_test
 import (
 	"testing"
 
-	"github.com/kyroy/kdtree/points"
+	"github.com/fegoa89/kdtree/points"
 	"github.com/stretchr/testify/assert"
 )
 

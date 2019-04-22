@@ -19,7 +19,7 @@ package points_test
 import (
 	"testing"
 
-	"github.com/kyroy/kdtree/points"
+	"github.com/fegoa89/kdtree/points"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -51,10 +51,10 @@ func TestPoint2D_String(t *testing.T) {
 		point    points.Point2D
 		expected string
 	}{
-		{name: "empty", point: points.Point2D{}, expected: "{0.00 0.00}"},
-		{name: "X", point: points.Point2D{X: 2}, expected: "{2.00 0.00}"},
-		{name: "Y", point: points.Point2D{Y: 3}, expected: "{0.00 3.00}"},
-		{name: "XY", point: points.Point2D{X: 2, Y: 3}, expected: "{2.00 3.00}"},
+		{name: "empty", point: points.Point2D{}, expected: "{0.00 0.00 <nil>}"},
+		{name: "X", point: points.Point2D{X: 2, Data: 3.14}, expected: "{2.00 0.00 3.14}"},
+		{name: "Y", point: points.Point2D{Y: 3, Data: 3.14}, expected: "{0.00 3.00 3.14}"},
+		{name: "XY", point: points.Point2D{X: 2, Y: 3, Data: "helloworld"}, expected: "{2.00 3.00 helloworld}"},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
